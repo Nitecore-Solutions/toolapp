@@ -1,0 +1,17 @@
+fastapi
+uvicorn[standard]
+python-multipart
+pillow
+opencv-python-headless
+rembg
+onnxruntime
+img2pdf
+pypdf
+pdf2image
+slowapi
+
+jinja2
+pydantic
+xhtml2pdf
+reportlab
+pymupdf

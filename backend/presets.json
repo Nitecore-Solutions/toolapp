@@ -1,0 +1,21 @@
+{
+  "nsdl-pan": {
+    "photo": { "width_cm": 3.5, "height_cm": 2.5, "min_kb": 20, "max_kb": 50, "format": "jpg" },
+    "signature": { "width_cm": 2.0, "height_cm": 4.5, "min_kb": 10, "max_kb": 50, "format": "jpg" }
+  },
+  "rrb": {
+    "photo": { "width_cm": 3.5, "height_cm": 4.5, "min_kb": 20, "max_kb": 70, "format": "jpg" },
+    "signature": { "width": 140, "height": 60, "min_kb": 30, "max_kb": 50, "format": "jpg" }
+  },
+  "upsc": {
+    "photo": { "width": 200, "height": 230, "min_kb": 20, "max_kb": 200, "format": "jpg" }
+  },
+  "indiapost-gds": {
+    "photo": { "width_cm": 3.5, "height_cm": 4.5, "min_kb": 30, "max_kb": 50, "format": "jpg" },
+    "signature": { "width": 140, "height": 60, "min_kb": 10, "max_kb": 20, "format": "jpg" }
+  },
+  "ssc": {
+    "photo": { "width": 200, "height": 230, "min_kb": 20, "max_kb": 50, "format": "jpg" },
+    "signature": { "width": 140, "height": 60, "min_kb": 10, "max_kb": 20, "format": "jpg" }
+  }
+}

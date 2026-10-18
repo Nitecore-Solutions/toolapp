@@ -1,0 +1,27 @@
+diff --git a/node_modules/react-native-google-mobile-ads/android/src/main/java/io/invertase/googlemobileads/ReactNativeGoogleMobileAdsModule.kt b/node_modules/react-native-google-mobile-ads/android/src/main/java/io/invertase/googlemobileads/ReactNativeGoogleMobileAdsModule.kt
+index c3a330d..2591dea 100644
+--- a/node_modules/react-native-google-mobile-ads/android/src/main/java/io/invertase/googlemobileads/ReactNativeGoogleMobileAdsModule.kt
++++ b/node_modules/react-native-google-mobile-ads/android/src/main/java/io/invertase/googlemobileads/ReactNativeGoogleMobileAdsModule.kt
+@@ -120,7 +120,7 @@ class ReactNativeGoogleMobileAdsModule(
+ 
+   @ReactMethod
+   fun openAdInspector(promise: Promise) {
+-    val activity = currentActivity
++    val activity = reactApplicationContext.currentActivity
+     if (activity == null) {
+       promise.reject("null-activity", "Ad Inspector attempted to open but the current Activity was null.")
+       return
+@@ -149,8 +149,11 @@ class ReactNativeGoogleMobileAdsModule(
+ 
+   @ReactMethod
+   fun openDebugMenu(adUnit: String) {
+-    currentActivity?.runOnUiThread {
+-      MobileAds.openDebugMenu(currentActivity!!, adUnit)
++    reactApplicationContext.currentActivity?.runOnUiThread {
++      val act = reactApplicationContext.currentActivity
++      if (act != null) {
++        MobileAds.openDebugMenu(act, adUnit)
++      }
+     }
+   }
+ 

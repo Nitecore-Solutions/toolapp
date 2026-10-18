@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Bharat Job Result Tool</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+            --card-bg: rgba(30, 41, 59, 0.45);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --primary: #3b82f6;
+            --primary-glow: rgba(59, 130, 246, 0.15);
+            --secondary: #60a5fa;
+            --accent: #818cf8;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --sidebar-hover: rgba(255, 255, 255, 0.03);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Background Decorative Glows */
+        .glow-1 {
+            position: fixed;
+            top: -20%;
+            left: -10%;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .glow-2 {
+            position: fixed;
+            bottom: -10%;
+            right: -10%;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(129, 140, 248, 0.1) 0%, transparent 75%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Container Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2.5rem;
+            position: relative;
+        }
+
+        /* Header Styles */
+        header {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 3rem 1.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            backdrop-filter: blur(12px);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .app-logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #3b82f6, #a5b4fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .update-date {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        /* Sidebar Navigation */
+        aside {
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 1.5rem;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.3);
+            animation: fadeInLeft 0.8s ease-out;
+        }
+
+        aside h2 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--secondary);
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.5rem;
+            border-b: 2px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .nav-links a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-left: 2px solid transparent;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+            background: var(--sidebar-hover);
+            border-left-color: var(--primary);
+            padding-left: 1.25rem;
+        }
+
+        /* Main Content Box */
+        main {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 3rem;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 15px 35px -15px rgba(0, 0, 0, 0.4);
+            animation: fadeInRight 0.8s ease-out;
+        }
+
+        /* Content Section Styles */
+        section {
+            margin-bottom: 3rem;
+        }
+
+        section:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 1.2rem;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1.2rem;
+            font-size: 0.975rem;
+            line-height: 1.7;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+            padding-left: 0.5rem;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .highlight-box {
+            background: rgba(59, 130, 246, 0.08);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 0 16px 16px 0;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box p {
+            color: var(--text-main);
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+
+        /* Contact Details Card */
+        .contact-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .contact-value {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Footer */
+        .footer-note {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 2rem 0 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            aside {
+                position: relative;
+                top: 0;
+                width: 100%;
+            }
+
+            .nav-links {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .nav-links a {
+                border-left: none;
+                border-bottom: 2px solid transparent;
+            }
+
+            .nav-links a:hover {
+                border-left-color: transparent;
+                border-bottom-color: var(--primary);
+                padding-left: 1rem;
+            }
+
+            main {
+                padding: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="glow-1"></div>
+    <div class="glow-2"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="app-logo">ToolHelp</div>
+            <h1>Privacy Policy</h1>
+            <div class="update-date">Last Updated: July 19, 2026</div>
+        </header>
+
+        <!-- Sidebar Navigation -->
+        <aside>
+            <h2>Sections</h2>
+            <nav class="nav-links">
+                <a href="#overview">Overview</a>
+                <a href="#info-collection">Information Collection</a>
+                <a href="#data-processing">Data Processing</a>
+                <a href="#cookies">Cookies & Logs</a>
+                <a href="#security">Security Measures</a>
+                <a href="#third-party">Third-Party Services</a>
+                <a href="#children">Children's Privacy</a>
+                <a href="#changes">Changes to Policy</a>
+                <a href="#contact">Contact Us</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Overview -->
+            <section id="overview">
+                <h2>Overview</h2>
+                <p>Welcome to <strong>Bharat Job Result Tool</strong> (referred to as "ToolHelp", "we", "our", or "us"). We provide utilities for document optimization, image transformations, PDF editing, overlays, and document forms processing. We value your privacy and are committed to protecting any data related to your experience.</p>
+                <p>This Privacy Policy outlines how we handle information when you install, access, or use our mobile application ("App") and any backend server services associated with it.</p>
+                <div class="highlight-box">
+                    <p>By using the Bharat Job Result Tool, you agree to the collection and use of information in accordance with this policy.</p>
+                </div>
+            </section>
+
+            <!-- Information Collection -->
+            <section id="info-collection">
+                <h2>Information Collection and Use</h2>
+                <p>To provide a functional and optimized experience while using our document and utility tools, we may request certain permissions or access to files on your device:</p>
+                <ul>
+                    <li><strong>Media & Storage Access:</strong> Required to read, process, and optimize your images, PDFs, or documents.</li>
+                    <li><strong>Camera Access (Optional):</strong> If you choose to scan documents or take pictures directly through the App.</li>
+                    <li><strong>Device Information:</strong> We may collect non-personally identifiable device descriptors for diagnostic and improvement purposes.</li>
+                </ul>
+                <p>We do not collect or require standard personally identifiable information (PII) such as your email address, phone number, name, or physical address to use the App.</p>
+            </section>
+
+            <!-- Data Processing -->
+            <section id="data-processing">
+                <h2>On-Device and Memory-Only Processing</h2>
+                <p>Our tool operates under strict privacy-first designs for user documents and media files:</p>
+                <ul>
+                    <li><strong>Temporary Processing:</strong> Any document, image, or PDF files that you upload or process are handled temporarily in runtime memory only to perform the requested operation (such as compression, overlay, or conversion).</li>
+                    <li><strong>No Permanent Storage:</strong> We do not store your uploaded media, documents, or processed outputs permanently on our servers. Files are discarded immediately after the operation is complete.</li>
+                    <li><strong>No File Sharing:</strong> Your files never leave our system and are never shared with or sold to third parties.</li>
+                </ul>
+            </section>
+
+            <!-- Cookies & Logs -->
+            <section id="cookies">
+                <h2>Cookies and Log Data</h2>
+                <p>Whenever you use our App, in case of an error or crash, we collect log information (through third-party diagnostic services) called Log Data. This Log Data may include details such as your device Internet Protocol ("IP") address, device name, operating system version, the configuration of the app when utilizing our service, the time and date of your use, and other statistics.</p>
+                <p>We do not use persistent cookies in our mobile app to track user behaviors across external web resources.</p>
+            </section>
+
+            <!-- Security Measures -->
+            <section id="security">
+                <h2>Security of Your Data</h2>
+                <p>The security of your data is paramount to us. We implement standard security practices including SSL/TLS encryption for all data in transit between the mobile application and our servers. While we strive to use commercially acceptable means to protect your information, please remember that no method of transmission over the internet, or method of electronic storage is 100% secure.</p>
+            </section>
+
+            <!-- Third-Party Services -->
+            <section id="third-party">
+                <h2>Third-Party Services</h2>
+                <p>Our App may utilize third-party SDKs or libraries to facilitate app features, analyze usage trends, or serve ads. These third parties may have access to non-personally identifiable information required to perform their tasks. However, they are obligated not to disclose or use the information for any other purpose.</p>
+                <p>We recommend reviewing the privacy policies of any third-party providers we may use:</p>
+                <ul>
+                    <li>Google Play Services</li>
+                    <li>Google AdMob / Firebase Analytics</li>
+                </ul>
+            </section>
+
+            <!-- Children's Privacy -->
+            <section id="children">
+                <h2>Children's Privacy</h2>
+                <p>Our services are not directed to anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. In the case we discover that a child under 13 has provided us with personal information, we immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so that we can take necessary actions.</p>
+            </section>
+
+            <!-- Changes to Policy -->
+            <section id="changes">
+                <h2>Changes to This Privacy Policy</h2>
+                <p>We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page, and these changes are effective immediately after they are posted.</p>
+            </section>
+
+            <!-- Contact Us -->
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us.</p>
+                
+                <div class="contact-card">
+                    <div class="contact-item">
+                        <span class="contact-label">App Owner:</span>
+                        <span class="contact-value">Bharat Job Result Support</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Email Support:</span>
+                        <a href="mailto:support@bharatjobresult.com" class="contact-value">support@bharatjobresult.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Official Website:</span>
+                        <a href="https://www.bharatjobresult.com" target="_blank" class="contact-value">www.bharatjobresult.com</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer-note">
+            &copy; 2026 Bharat Job Result Tool. All Rights Reserved. Designed with Privacy First Principles.
+        </footer>
+    </div>
+</body>
+</html>

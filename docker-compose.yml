@@ -1,0 +1,24 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: toolapp-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      # AI model cache volume — restart pe dobara download nahi hoga
+      - rembg_models:/root/.u2net
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONUNBUFFERED=1
+    # workers 2 — RAM stable, 2 simultaneous requests handle hoge
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --workers 2 --timeout-keep-alive 75
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 3G
+
+volumes:
+  rembg_models:
